@@ -99,37 +99,37 @@ namespace Slide_down
             ball.Location = new Point(12, ball.Location.Y);
             if (variables.SelectedIndex == 0)
             {
-                double gravity_force = Convert.ToDouble(gravity.Text);
-                double slope_length = Convert.ToDouble(length.Text);
-                double seconds = Convert.ToDouble(time.Text);
+                double gravity_force = Convert.ToDouble(gravity.Text.Replace(".", ","));
+                double slope_length = Convert.ToDouble(length.Text.Replace(".", ","));
+                double seconds = Convert.ToDouble(time.Text.Replace(".", ","));
                 double slope_angle = (2 * slope_length) / (gravity_force * Math.Pow(seconds, 2));
-                angle.Text = Convert.ToString(slope_length);
+                angle.Text = Convert.ToString(slope_length).Replace(",", ".");
             }
             if (variables.SelectedIndex == 1)
             {
-                double slope_angle = Convert.ToDouble(angle.Text);
-                double slope_length = Convert.ToDouble(length.Text);
-                double seconds = Convert.ToDouble(time.Text);
+                double slope_angle = Convert.ToDouble(angle.Text.Replace(".", ","));
+                double slope_length = Convert.ToDouble(length.Text.Replace(".", ","));
+                double seconds = Convert.ToDouble(time.Text.Replace(".", ","));
                 double gravity_force = (2 * slope_length) / (Math.Sin(slope_angle) * Math.Pow(seconds, 2));
-                gravity.Text = Convert.ToString(gravity_force);
+                gravity.Text = Convert.ToString(gravity_force).Replace(",", ".");
             }
             if (variables.SelectedIndex == 2)
             {
-                double slope_angle = Convert.ToDouble(angle.Text);
-                double gravity_force = Convert.ToDouble(gravity.Text);
+                double slope_angle = Convert.ToDouble(angle.Text.Replace(".", ","));
+                double gravity_force = Convert.ToDouble(gravity.Text.Replace(".", ","));
                 double acceleration = Math.Sin(slope_angle) * gravity_force;
-                double seconds = Convert.ToDouble(time.Text);
+                double seconds = Convert.ToDouble(time.Text.Replace(".", ","));
                 double slope_length = acceleration * Math.Pow(seconds, 2);
-                length.Text = Convert.ToString(slope_length);
+                length.Text = Convert.ToString(slope_length).Replace(",", ".");
             }
             if (variables.SelectedIndex == 3)
             {
-                double slope_angle = Convert.ToDouble(angle.Text);
-                double gravity_force = Convert.ToDouble(gravity.Text);
-                double slope_length = Convert.ToDouble(length.Text);
+                double slope_angle = Convert.ToDouble(angle.Text.Replace(".", ","));
+                double gravity_force = Convert.ToDouble(gravity.Text.Replace(".", ","));
+                double slope_length = Convert.ToDouble(length.Text.Replace(".", ",")t);
                 double acceleration = Math.Sin(slope_angle) * gravity_force;
                 double seconds = Math.Sqrt((2 * slope_length) / acceleration);
-                time.Text = Convert.ToString(seconds);
+                time.Text = Convert.ToString(seconds).Replace(",", ".");
             }
         }
 
